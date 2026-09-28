@@ -37,5 +37,35 @@ public class MainActivity extends AppCompatActivity {
 
         Button btnCalculate = findViewById(R.id.btnCalculate);
         Button btnClear = findViewById(R.id.btnClear);
+
+        showPercent(sbPercent.getProgress());
+
+        sbPercent.setOnSeekBarChangeListener(
+                new SeekBar.OnSeekBarChangeListener() {
+
+                    @Override
+                    public void onProgressChanged(
+                            SeekBar seekBar,
+                            int progress,
+                            boolean fromUser
+                    ) {
+                        showPercent(progress);
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+                    }
+
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+                    }
+                }
+        );
+    }
+
+    private void showPercent(int percent) {
+        tvPercentValue.setText(
+                getString(R.string.percent_format, percent)
+        );
     }
 }
