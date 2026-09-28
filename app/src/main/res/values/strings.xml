@@ -1,3 +1,12 @@
 <resources>
+
     <string name="app_name">ConstraintLayout</string>
+
+    <string name="logo_description">Logo aplikacji</string>
+    <string name="email">E-mail</string>
+    <string name="password">Hasło</string>
+    <string name="remember_me">Zapamiętaj mnie</string>
+    <string name="login">Zaloguj</string>
+    <string name="forgot_password">Nie pamiętam hasła</string>
+
 </resources>

@@ -1,48 +1,37 @@
-# Zadanie 4 - Łańcuch i style
+# Zadanie 5 - ekran logowania
 
-W zadaniu utworzono trzy przyciski umieszczone w jednym poziomym
-łańcuchu (`horizontal chain`) na dole ekranu.
+Utworzono kompletny ekran logowania przy użyciu `ConstraintLayout`.
 
-## Style łańcucha
+Ekran zawiera:
+- kwadratowe logo `ImageView`,
+- pole e-mail,
+- pole hasła,
+- checkbox „Zapamiętaj mnie",
+- przycisk „Zaloguj",
+- przycisk tekstowy „Nie pamiętam hasła".
 
-### 1. Spread
+Wszystkie teksty zostały umieszczone w pliku `strings.xml`.
 
-Styl `spread` rozkłada elementy łańcucha na całej dostępnej
-szerokości. Wolna przestrzeń jest rozdzielana pomiędzy przyciski.
+## Logo
 
-![Spread](docs/chain-spread.png)
+Logo wykorzystuje `ImageView`. Jego kształt kwadratowy został
+uzyskany za pomocą:
 
-### 2. Spread inside
+`app:layout_constraintDimensionRatio="1:1"`
 
-Styl `spread_inside` powoduje, że pierwszy przycisk znajduje się
-przy lewej krawędzi, a ostatni przy prawej krawędzi. Wolna przestrzeń
-jest rozdzielana pomiędzy elementami znajdującymi się wewnątrz
-łańcucha.
+## Orientacja pionowa
 
-![Spread inside](docs/chain-spread-inside.png)
+W orientacji pionowej elementy są ułożone jeden pod drugim
+i ekran wygląda poprawnie.
 
-### 3. Packed
+## Orientacja pozioma
 
-Styl `packed` grupuje wszystkie przyciski razem. Przyciski znajdują
-się obok siebie, a wolna przestrzeń pozostaje po bokach całej grupy.
+Po obróceniu urządzenia ekran nie jest dostosowany specjalnie
+do orientacji poziomej. Układ pozostaje pionowy, przez co:
 
-![Packed](docs/chain-packed.png)
+- pozostaje dużo niewykorzystanego miejsca po bokach,
+- elementy są skupione w jednym pionowym układzie,
+- przy mniejszej wysokości ekranu może zabraknąć miejsca
+  na wszystkie elementy.
 
-## Różnice
-
-- `spread` - elementy są rozłożone w całej dostępnej przestrzeni.
-- `spread_inside` - pierwszy i ostatni element są przy krawędziach,
-  a wolna przestrzeń znajduje się pomiędzy elementami.
-- `packed` - wszystkie elementy są skupione obok siebie.
-
-## Wersja końcowa
-
-Na końcu pozostawiono styl `spread` z wagami `1 : 2 : 1`.
-
-Oznacza to, że pierwszy i trzeci przycisk mają taką samą szerokość,
-natomiast drugi przycisk otrzymuje dwa razy większą szerokość.
-
-```text
-Przycisk 1 : Przycisk 2 : Przycisk 3
-       1   :       2     :       1
-```
+Nie zastosowano osobnego layoutu dla orientacji poziomej,
